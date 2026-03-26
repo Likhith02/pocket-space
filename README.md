@@ -53,10 +53,9 @@ Open `index.html` in your browser for a simple preview.
 
 ### Recommended Option
 
-Run a local server from the project folder:
+Open a terminal in the project folder, then run:
 
 ```powershell
-cd "C:\Users\likhi\OneDrive\Documents\New project"
 python -m http.server 8000
 ```
 
