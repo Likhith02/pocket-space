@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Pocket Space icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b6f6d"/>
+      <stop offset="50%" stop-color="#e46f2a"/>
+      <stop offset="100%" stop-color="#f3b83b"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="132" fill="url(#bg)"/>
+  <path
+    d="M113 167C113 144.909 130.909 127 153 127H359C381.091 127 399 144.909 399 167V311C399 333.091 381.091 351 359 351H246L182 403V351H153C130.909 351 113 333.091 113 311V167Z"
+    fill="rgba(255,255,255,0.9)"
+  />
+  <circle cx="192" cy="238" r="24" fill="#0b6f6d"/>
+  <circle cx="256" cy="238" r="24" fill="#e46f2a"/>
+  <circle cx="320" cy="238" r="24" fill="#f3b83b"/>
+</svg>

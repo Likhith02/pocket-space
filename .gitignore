@@ -1,0 +1,23 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor settings
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Common dependency and build folders
+node_modules/
+dist/
+build/
+coverage/
+
+# Deployment and cache folders
+.cache/
+.parcel-cache/
+.vercel/
+.netlify/

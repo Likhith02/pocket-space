@@ -1,0 +1,17 @@
+{
+  "name": "Pocket Space",
+  "short_name": "Pocket Space",
+  "description": "Capture notes, links, reminders, and snapshots into a calm AI-ready personal space.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6ead6",
+  "theme_color": "#e46f2a",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

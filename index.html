@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#e46f2a">
+    <meta
+      name="description"
+      content="Pocket Space is a mobile-first capture board that turns notes, links, reminders, and screenshots into a useful personal feed."
+    >
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pocket Space</title>
+  </head>
+  <body>
+    <div class="ambient ambient-a" aria-hidden="true"></div>
+    <div class="ambient ambient-b" aria-hidden="true"></div>
+    <div class="ambient-grid" aria-hidden="true"></div>
+
+    <main class="app-shell">
+      <header class="hero">
+        <div class="brand-lockup">
+          <p class="brand-pill">Pocket Space</p>
+          <h1>Your notes, links, reminders, and screenshots in one helpful feed.</h1>
+          <p class="hero-copy">
+            This is a lightweight Essential Space-style prototype built for quick capture,
+            smart organization, and calm review on a phone.
+          </p>
+        </div>
+
+        <div class="hero-panels">
+          <section class="hero-card hero-card-primary">
+            <p class="eyebrow">Focus now</p>
+            <div id="focusSummary" class="focus-summary"></div>
+            <button id="openComposer" class="primary-button" type="button">Capture something</button>
+          </section>
+
+          <section class="hero-card hero-card-secondary">
+            <p class="eyebrow">How it feels smart</p>
+            <ul class="feature-list">
+              <li>Creates short summaries automatically</li>
+              <li>Sorts entries into tasks, ideas, memories, or references</li>
+              <li>Surfaces what needs attention first</li>
+            </ul>
+          </section>
+        </div>
+      </header>
+
+      <section class="command-strip">
+        <label class="search-field" for="searchInput">
+          <span>Search your space</span>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Try: design idea, bill due, class notes..."
+            autocomplete="off"
+          >
+        </label>
+
+        <div id="filterBar" class="filter-bar" role="tablist" aria-label="Item filters"></div>
+      </section>
+
+      <section class="dashboard">
+        <div class="dashboard-head">
+          <div>
+            <p class="section-label">Smart Stack</p>
+            <h2>What deserves your attention</h2>
+          </div>
+          <button id="seedButton" class="ghost-button" type="button">Reset demo content</button>
+        </div>
+
+        <div id="highlights" class="highlights"></div>
+        <div id="focusList" class="focus-list"></div>
+      </section>
+
+      <section class="timeline-shell">
+        <div class="dashboard-head">
+          <div>
+            <p class="section-label">Timeline</p>
+            <h2>Everything you captured</h2>
+          </div>
+          <p id="resultCount" class="result-count"></p>
+        </div>
+
+        <div id="timeline" class="timeline"></div>
+      </section>
+    </main>
+
+    <button id="fabButton" class="fab" type="button" aria-label="Capture something new">
+      +
+    </button>
+
+    <div id="sheetBackdrop" class="sheet-backdrop" hidden></div>
+
+    <section id="composerSheet" class="composer-sheet" aria-hidden="true">
+      <form id="captureForm" class="capture-form">
+        <div class="composer-head">
+          <div>
+            <p class="section-label">Quick capture</p>
+            <h2>Save it before it slips away</h2>
+          </div>
+          <button id="closeComposer" class="icon-button" type="button" aria-label="Close composer">
+            x
+          </button>
+        </div>
+
+        <div class="capture-type-bar" role="tablist" aria-label="Capture type">
+          <button class="capture-type is-active" data-capture-type="note" type="button">Note</button>
+          <button class="capture-type" data-capture-type="link" type="button">Link</button>
+          <button class="capture-type" data-capture-type="reminder" type="button">Reminder</button>
+          <button class="capture-type" data-capture-type="image" type="button">Snapshot</button>
+        </div>
+
+        <label class="field">
+          <span>Title</span>
+          <input name="title" type="text" maxlength="120" placeholder="What is this?" required>
+        </label>
+
+        <label class="field">
+          <span>Details</span>
+          <textarea
+            name="content"
+            rows="5"
+            maxlength="1600"
+            placeholder="Write a thought, task, quote, meeting plan, or anything worth keeping..."
+          ></textarea>
+        </label>
+
+        <label class="field conditional-field" data-visible-for="link" hidden>
+          <span>Link</span>
+          <input name="url" type="url" placeholder="https://example.com/article">
+        </label>
+
+        <label class="field conditional-field" data-visible-for="reminder" hidden>
+          <span>Remind me at</span>
+          <input name="remindAt" type="datetime-local">
+        </label>
+
+        <label class="field conditional-field" data-visible-for="image" hidden>
+          <span>Image or screenshot</span>
+          <input name="image" type="file" accept="image/*">
+        </label>
+
+        <div class="utility-row">
+          <button id="clipboardButton" class="ghost-button" type="button">Import clipboard text</button>
+          <p class="helper-text">Everything stays on this device in local storage.</p>
+        </div>
+
+        <div class="composer-actions">
+          <button class="ghost-button" id="clearFormButton" type="reset">Clear</button>
+          <button class="primary-button" type="submit">Save to Space</button>
+        </div>
+      </form>
+    </section>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
