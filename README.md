@@ -71,17 +71,6 @@ You can also run:
 .\start-local.bat
 ```
 
-## Bonus Mini Tool: Coffee2Post
-
-This workspace also includes `Coffee2Post`, a lightweight GenAI-style helper for drafting LinkedIn posts from quick raw thoughts.
-
-- Open `coffee2post.html` directly, or run the local server and open:
-- [http://127.0.0.1:8000/coffee2post.html](http://127.0.0.1:8000/coffee2post.html)
-- Features:
-- Voice-capture or paste rough ideas
-- Pick vibe: casual, professional, or funny
-- Generate a ready-to-post draft plus hook suggestions
-
 ## Use It On a Phone
 
 1. Start the local server on your computer.
@@ -105,9 +94,6 @@ Example:
 |-- index.html
 |-- styles.css
 |-- app.js
-|-- coffee2post.html
-|-- coffee2post.css
-|-- coffee2post.js
 |-- manifest.webmanifest
 |-- sw.js
 |-- start-local.bat
