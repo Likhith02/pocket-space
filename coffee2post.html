@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Coffee2Post turns a quick GenAI voice rant into a polished LinkedIn post in your vibe."
+    >
+    <link rel="stylesheet" href="coffee2post.css">
+    <title>Coffee2Post</title>
+  </head>
+  <body>
+    <div class="glow glow-a" aria-hidden="true"></div>
+    <div class="glow glow-b" aria-hidden="true"></div>
+
+    <main class="shell">
+      <header class="hero">
+        <p class="pill">GenAI Side Quest</p>
+        <h1>Coffee2Post</h1>
+        <p class="hero-copy">
+          Drop your rough 30-second thought, pick a vibe, and get a ready-to-post LinkedIn draft.
+        </p>
+      </header>
+
+      <section class="layout">
+        <form id="generatorForm" class="card input-card">
+          <div class="card-head">
+            <h2>Your raw thought</h2>
+            <p>Messy is fine. The generator will clean it up.</p>
+          </div>
+
+          <label class="field">
+            <span>Idea, rant, or update</span>
+            <textarea
+              id="rantInput"
+              rows="8"
+              placeholder="Example: I built a small GenAI helper that rewrites resume bullets based on semantic similarity instead of pure prompting..."
+              required
+            ></textarea>
+          </label>
+
+          <div class="voice-row">
+            <button id="startVoiceButton" class="ghost-button" type="button">Start voice capture</button>
+            <button id="stopVoiceButton" class="ghost-button" type="button" disabled>Stop</button>
+            <p id="voiceStatus" class="status" aria-live="polite">Voice capture ready.</p>
+          </div>
+
+          <fieldset class="field">
+            <legend>Vibe</legend>
+            <div class="vibe-grid">
+              <label class="vibe-option">
+                <input type="radio" name="vibe" value="casual" checked>
+                <span>Casual</span>
+              </label>
+              <label class="vibe-option">
+                <input type="radio" name="vibe" value="professional">
+                <span>Professional</span>
+              </label>
+              <label class="vibe-option">
+                <input type="radio" name="vibe" value="funny">
+                <span>Funny</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="inline-options">
+            <label class="field small">
+              <span>Length</span>
+              <select id="lengthSelect">
+                <option value="short">Short</option>
+                <option value="medium" selected>Medium</option>
+                <option value="long">Long</option>
+              </select>
+            </label>
+
+            <label class="field small">
+              <span>Sign-off name (optional)</span>
+              <input id="authorInput" type="text" maxlength="30" placeholder="Likhith">
+            </label>
+          </div>
+
+          <button class="primary-button" type="submit">Brew my post</button>
+        </form>
+
+        <section class="card output-card" aria-live="polite">
+          <div class="card-head">
+            <h2>Ready to post</h2>
+            <p>Copy directly to LinkedIn, or remix it.</p>
+          </div>
+
+          <textarea id="outputPost" class="output-post" rows="14" readonly></textarea>
+
+          <div class="meta">
+            <p id="charCount">0 characters</p>
+            <p id="wordCount">0 words</p>
+          </div>
+
+          <div class="action-row">
+            <button id="copyButton" class="ghost-button" type="button" disabled>Copy post</button>
+            <button id="remixButton" class="ghost-button" type="button" disabled>Remix vibe wording</button>
+          </div>
+
+          <div class="hooks">
+            <h3>Hook options</h3>
+            <ul id="hookList"></ul>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="coffee2post.js" defer></script>
+  </body>
+</html>
